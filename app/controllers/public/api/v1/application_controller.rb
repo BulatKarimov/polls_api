@@ -1,4 +1,6 @@
 class Public::Api::V1::ApplicationController < Public::Api::ApplicationController
+  include ActionController::Helpers
+
   before_action :set_gis_token
   before_action :set_ss_api_token
 

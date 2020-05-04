@@ -1,5 +1,4 @@
 class Public::Api::V1::AddressesController < Public::Api::ApplicationController
-  include ActionController::Helpers
 
   expose :addresses, -> { Address.fetch_all }
 
