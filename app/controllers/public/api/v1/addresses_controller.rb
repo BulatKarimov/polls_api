@@ -1,4 +1,4 @@
-class Public::Api::V1::AddressesController < Public::Api::ApplicationController
+class Public::Api::V1::AddressesController < Public::Api::V1::ApplicationController
 
   expose :addresses, -> { Address.fetch_all }
 
