@@ -1,4 +1,4 @@
-class AddressSerializer < ActiveModel::Serializers
+class AddressSerializer < ActiveModel::Serializer
   attributes :short_address, :uuid, :location
 
   def location

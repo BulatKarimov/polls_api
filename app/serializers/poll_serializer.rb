@@ -1,3 +1,3 @@
-class PollSerializer < ActiveModel::Serializers
+class PollSerializer < ActiveModel::Serializer
 
 end
