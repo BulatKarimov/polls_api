@@ -1,4 +1,4 @@
-class Public::Api::V1::PollsController < Public::Api::ApplicationController
+class Public::Api::V1::PollsController < Public::Api::V1::ApplicationController
 
   expose :type, -> { params[:type] }
   expose :archived_polls, -> { Poll.where(poll_type: 'archived') }
