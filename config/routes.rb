@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :public do
       namespace :v1 do
-        resource :addresses, param: :address_uuid, only: :index
-
+        get 'addresses', to: 'addresses#index'
         resource :polls, param: :poll_uuid, only: %i[index show create]
       end
     end
