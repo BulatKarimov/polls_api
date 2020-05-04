@@ -22,6 +22,8 @@ set :sidekiq_timeout, ->{ 10 }
 set :sidekiq_role, ->{ :app }
 set :sidekiq_pid, ->{ "#{current_path}/tmp/pids/sidekiq.pid" }
 
+set :assets_roles, []
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
