@@ -47,6 +47,8 @@ gem 'httparty'
 gem 'dotenv-rails'
 gem "her"
 
+gem 'rack-cors'
+
 # Deploy
 gem 'capistrano', '~> 3.10.2'
 gem 'capistrano-rails', '~> 1.2'

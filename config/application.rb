@@ -23,6 +23,21 @@ module PollsApi
     config.load_defaults 6.0
 
     config.eager_load_paths << "#{config.root}/lib"
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins /https?:\/\/(.*?).sputnik.systems/,
+                'http://localhost:3000',
+                'http://localhost:3001',
+                'http://localhost:3002',
+                '192.168.1.*:3000',
+                '192.168.0.154:3000'
+        resource '*',
+                 credentials: true,
+                 headers: :any,
+                 methods: [:get, :post, :delete, :put, :patch, :options, :head]
+        end
+      end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
