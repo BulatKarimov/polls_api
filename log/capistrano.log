@@ -1049,3 +1049,232 @@ Install missing gems with `bundle install`
 /usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/exe/bundle:34:in `<top (required)>'
 /usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `load'
 /usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `<main>'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-05-04 16:20:22 +0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8306cba3] Running [ -d /usr/local/rbenv/versions/2.6.5 ] as deployer@51.15.198.106
+ DEBUG [8306cba3] Command: [ -d /usr/local/rbenv/versions/2.6.5 ]
+ DEBUG [8306cba3] Finished in 1.187 seconds with exit status 0 (successful).
+  INFO [2746ad3f] Running /usr/bin/env mkdir -p /tmp as deployer@51.15.198.106
+ DEBUG [2746ad3f] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /tmp )
+  INFO [2746ad3f] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-polls_api-production-bulatkarimov.sh 0.0%
+  INFO Uploading /tmp/git-ssh-polls_api-production-bulatkarimov.sh 100.0%
+  INFO [1bb9e184] Running /usr/bin/env chmod 700 /tmp/git-ssh-polls_api-production-bulatkarimov.sh as deployer@51.15.198.106
+ DEBUG [1bb9e184] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env chmod 700 /tmp/git-ssh-polls_api-production-bulatkarimov.sh )
+  INFO [1bb9e184] Finished in 0.204 seconds with exit status 0 (successful).
+  INFO [a4398dfe] Running /usr/bin/env git ls-remote git@github.com:BulatKarimov/polls_api.git HEAD as deployer@51.15.198.106
+ DEBUG [a4398dfe] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env git ls-remote git@github.com:BulatKarimov/polls_api.git HEAD )
+ DEBUG [a4398dfe] 	Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.
+ DEBUG [a4398dfe] 	10d26f9474c1444a028a3114df7ee205a7ac3c3a	HEAD
+  INFO [a4398dfe] Finished in 1.585 seconds with exit status 0 (successful).
+  INFO [a1d576c3] Running /usr/bin/env mkdir -p /apps/polls_api/shared /apps/polls_api/releases as deployer@51.15.198.106
+ DEBUG [a1d576c3] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /apps/polls_api/shared /apps/polls_api/releases )
+  INFO [a1d576c3] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO [04ab45c7] Running /usr/bin/env mkdir -p /apps/polls_api/shared/log /apps/polls_api/shared/tmp/pids /apps/polls_api/shared/tmp/cache /apps/polls_api/shared/tmp/sockets /apps/polls_api/shared/public/uploads /apps/polls_api/shared/public/assets as deployer@51.15.198.106
+ DEBUG [04ab45c7] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /apps/polls_api/shared/log /apps/polls_api/shared/tmp/pids /apps/polls_api/shared/tmp/cache /apps/polls_api/shared/tmp/sockets /apps/polls_api/shared/public/uploads /apps/polls_api/shared/public/assets )
+  INFO [04ab45c7] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [44b48d00] Running /usr/bin/env mkdir -p /apps/polls_api/shared as deployer@51.15.198.106
+ DEBUG [44b48d00] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /apps/polls_api/shared )
+  INFO [44b48d00] Finished in 0.203 seconds with exit status 0 (successful).
+ DEBUG [d8706984] Running [ -f /apps/polls_api/shared/.env ] as deployer@51.15.198.106
+ DEBUG [d8706984] Command: [ -f /apps/polls_api/shared/.env ]
+ DEBUG [d8706984] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [1c688120] Running [ -f /apps/polls_api/shared/puma.rb ] as deployer@51.15.198.106
+ DEBUG [1c688120] Command: [ -f /apps/polls_api/shared/puma.rb ]
+ DEBUG [1c688120] Finished in 0.202 seconds with exit status 0 (successful).
+ DEBUG [8a231cf7] Running [ -f /apps/polls_api/current/REVISION ] as deployer@51.15.198.106
+ DEBUG [8a231cf7] Command: [ -f /apps/polls_api/current/REVISION ]
+ DEBUG [8a231cf7] Finished in 0.252 seconds with exit status 1 (failed).
+ DEBUG [8ff09514] Running [ -d /apps/polls_api/current ] as deployer@51.15.198.106
+ DEBUG [8ff09514] Command: [ -d /apps/polls_api/current ]
+ DEBUG [8ff09514] Finished in 0.203 seconds with exit status 1 (failed).
+ DEBUG [58194ec5] Running [ -f /apps/polls_api/repo/HEAD ] as deployer@51.15.198.106
+ DEBUG [58194ec5] Command: [ -f /apps/polls_api/repo/HEAD ]
+ DEBUG [58194ec5] Finished in 0.254 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /apps/polls_api/repo
+ DEBUG [8abe20a3] Running if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [8abe20a3] Command: if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi
+ DEBUG [8abe20a3] Finished in 0.202 seconds with exit status 0 (successful).
+  INFO [ca02d2c8] Running /usr/bin/env git remote set-url origin git@github.com:BulatKarimov/polls_api.git as deployer@51.15.198.106
+ DEBUG [ca02d2c8] Command: cd /apps/polls_api/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env git remote set-url origin git@github.com:BulatKarimov/polls_api.git )
+  INFO [ca02d2c8] Finished in 0.272 seconds with exit status 0 (successful).
+  INFO [8405460d] Running /usr/bin/env git remote update --prune as deployer@51.15.198.106
+ DEBUG [8405460d] Command: cd /apps/polls_api/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8405460d] 	Fetching origin
+ DEBUG [8405460d] 	From github.com:BulatKarimov/polls_api
+   7afe9fb..10d26f9  master     -> master
+  INFO [8405460d] Finished in 1.723 seconds with exit status 0 (successful).
+ DEBUG [065e7a54] Running if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [065e7a54] Command: if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi
+ DEBUG [065e7a54] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [5f9d1e83] Running /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 as deployer@51.15.198.106
+ DEBUG [5f9d1e83] Command: cd /apps/polls_api/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 )
+  INFO [5f9d1e83] Finished in 0.254 seconds with exit status 0 (successful).
+  INFO [14a72832] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /apps/polls_api/releases/20200504132027 as deployer@51.15.198.106
+ DEBUG [14a72832] Command: cd /apps/polls_api/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /apps/polls_api/releases/20200504132027 )
+  INFO [14a72832] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [d88cb709] Running if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [d88cb709] Command: if test ! -d /apps/polls_api/repo; then echo "Directory does not exist '/apps/polls_api/repo'" 1>&2; false; fi
+ DEBUG [d88cb709] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [6c36ba84] Running /usr/bin/env git rev-list --max-count=1 master as deployer@51.15.198.106
+ DEBUG [6c36ba84] Command: cd /apps/polls_api/repo && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-polls_api-production-bulatkarimov.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6c36ba84] 	10d26f9474c1444a028a3114df7ee205a7ac3c3a
+ DEBUG [6c36ba84] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [4f84c295] Running if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [4f84c295] Command: if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi
+ DEBUG [4f84c295] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [fa9477b7] Running /usr/bin/env echo "10d26f9474c1444a028a3114df7ee205a7ac3c3a" > REVISION as deployer@51.15.198.106
+ DEBUG [fa9477b7] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env echo "10d26f9474c1444a028a3114df7ee205a7ac3c3a" > REVISION )
+  INFO [fa9477b7] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [0c93368a] Running /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 as deployer@51.15.198.106
+ DEBUG [0c93368a] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 )
+  INFO [0c93368a] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [de3fe941] Running [ -L /apps/polls_api/releases/20200504132027/.env ] as deployer@51.15.198.106
+ DEBUG [de3fe941] Command: [ -L /apps/polls_api/releases/20200504132027/.env ]
+ DEBUG [de3fe941] Finished in 0.214 seconds with exit status 1 (failed).
+ DEBUG [934234e2] Running [ -f /apps/polls_api/releases/20200504132027/.env ] as deployer@51.15.198.106
+ DEBUG [934234e2] Command: [ -f /apps/polls_api/releases/20200504132027/.env ]
+ DEBUG [934234e2] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [49986743] Running /usr/bin/env rm /apps/polls_api/releases/20200504132027/.env as deployer@51.15.198.106
+ DEBUG [49986743] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env rm /apps/polls_api/releases/20200504132027/.env )
+  INFO [49986743] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO [437c9e54] Running /usr/bin/env ln -s /apps/polls_api/shared/.env /apps/polls_api/releases/20200504132027/.env as deployer@51.15.198.106
+ DEBUG [437c9e54] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/.env /apps/polls_api/releases/20200504132027/.env )
+  INFO [437c9e54] Finished in 0.263 seconds with exit status 0 (successful).
+  INFO [8cbe62b2] Running /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 /apps/polls_api/releases/20200504132027/tmp /apps/polls_api/releases/20200504132027/public as deployer@51.15.198.106
+ DEBUG [8cbe62b2] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env mkdir -p /apps/polls_api/releases/20200504132027 /apps/polls_api/releases/20200504132027/tmp /apps/polls_api/releases/20200504132027/public )
+  INFO [8cbe62b2] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [cb70ee5b] Running [ -L /apps/polls_api/releases/20200504132027/log ] as deployer@51.15.198.106
+ DEBUG [cb70ee5b] Command: [ -L /apps/polls_api/releases/20200504132027/log ]
+ DEBUG [cb70ee5b] Finished in 0.249 seconds with exit status 1 (failed).
+ DEBUG [8eda68d2] Running [ -d /apps/polls_api/releases/20200504132027/log ] as deployer@51.15.198.106
+ DEBUG [8eda68d2] Command: [ -d /apps/polls_api/releases/20200504132027/log ]
+ DEBUG [8eda68d2] Finished in 0.204 seconds with exit status 0 (successful).
+  INFO [451f6aa0] Running /usr/bin/env rm -rf /apps/polls_api/releases/20200504132027/log as deployer@51.15.198.106
+ DEBUG [451f6aa0] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env rm -rf /apps/polls_api/releases/20200504132027/log )
+  INFO [451f6aa0] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [31095888] Running /usr/bin/env ln -s /apps/polls_api/shared/log /apps/polls_api/releases/20200504132027/log as deployer@51.15.198.106
+ DEBUG [31095888] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/log /apps/polls_api/releases/20200504132027/log )
+  INFO [31095888] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG [763adbdd] Running [ -L /apps/polls_api/releases/20200504132027/tmp/pids ] as deployer@51.15.198.106
+ DEBUG [763adbdd] Command: [ -L /apps/polls_api/releases/20200504132027/tmp/pids ]
+ DEBUG [763adbdd] Finished in 0.250 seconds with exit status 1 (failed).
+ DEBUG [dd1269c2] Running [ -d /apps/polls_api/releases/20200504132027/tmp/pids ] as deployer@51.15.198.106
+ DEBUG [dd1269c2] Command: [ -d /apps/polls_api/releases/20200504132027/tmp/pids ]
+ DEBUG [dd1269c2] Finished in 0.205 seconds with exit status 1 (failed).
+  INFO [bc2862dd] Running /usr/bin/env ln -s /apps/polls_api/shared/tmp/pids /apps/polls_api/releases/20200504132027/tmp/pids as deployer@51.15.198.106
+ DEBUG [bc2862dd] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/tmp/pids /apps/polls_api/releases/20200504132027/tmp/pids )
+  INFO [bc2862dd] Finished in 0.254 seconds with exit status 0 (successful).
+ DEBUG [5d8a99e7] Running [ -L /apps/polls_api/releases/20200504132027/tmp/cache ] as deployer@51.15.198.106
+ DEBUG [5d8a99e7] Command: [ -L /apps/polls_api/releases/20200504132027/tmp/cache ]
+ DEBUG [5d8a99e7] Finished in 0.206 seconds with exit status 1 (failed).
+ DEBUG [13602643] Running [ -d /apps/polls_api/releases/20200504132027/tmp/cache ] as deployer@51.15.198.106
+ DEBUG [13602643] Command: [ -d /apps/polls_api/releases/20200504132027/tmp/cache ]
+ DEBUG [13602643] Finished in 0.246 seconds with exit status 1 (failed).
+  INFO [a7315b60] Running /usr/bin/env ln -s /apps/polls_api/shared/tmp/cache /apps/polls_api/releases/20200504132027/tmp/cache as deployer@51.15.198.106
+ DEBUG [a7315b60] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/tmp/cache /apps/polls_api/releases/20200504132027/tmp/cache )
+  INFO [a7315b60] Finished in 0.201 seconds with exit status 0 (successful).
+ DEBUG [63650bdf] Running [ -L /apps/polls_api/releases/20200504132027/tmp/sockets ] as deployer@51.15.198.106
+ DEBUG [63650bdf] Command: [ -L /apps/polls_api/releases/20200504132027/tmp/sockets ]
+ DEBUG [63650bdf] Finished in 0.247 seconds with exit status 1 (failed).
+ DEBUG [b516f921] Running [ -d /apps/polls_api/releases/20200504132027/tmp/sockets ] as deployer@51.15.198.106
+ DEBUG [b516f921] Command: [ -d /apps/polls_api/releases/20200504132027/tmp/sockets ]
+ DEBUG [b516f921] Finished in 0.202 seconds with exit status 1 (failed).
+  INFO [86dc1cce] Running /usr/bin/env ln -s /apps/polls_api/shared/tmp/sockets /apps/polls_api/releases/20200504132027/tmp/sockets as deployer@51.15.198.106
+ DEBUG [86dc1cce] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/tmp/sockets /apps/polls_api/releases/20200504132027/tmp/sockets )
+  INFO [86dc1cce] Finished in 0.251 seconds with exit status 0 (successful).
+ DEBUG [581a2abe] Running [ -L /apps/polls_api/releases/20200504132027/public/uploads ] as deployer@51.15.198.106
+ DEBUG [581a2abe] Command: [ -L /apps/polls_api/releases/20200504132027/public/uploads ]
+ DEBUG [581a2abe] Finished in 0.210 seconds with exit status 1 (failed).
+ DEBUG [aff24b82] Running [ -d /apps/polls_api/releases/20200504132027/public/uploads ] as deployer@51.15.198.106
+ DEBUG [aff24b82] Command: [ -d /apps/polls_api/releases/20200504132027/public/uploads ]
+ DEBUG [aff24b82] Finished in 0.243 seconds with exit status 1 (failed).
+  INFO [33f33761] Running /usr/bin/env ln -s /apps/polls_api/shared/public/uploads /apps/polls_api/releases/20200504132027/public/uploads as deployer@51.15.198.106
+ DEBUG [33f33761] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/public/uploads /apps/polls_api/releases/20200504132027/public/uploads )
+  INFO [33f33761] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [eaa07203] Running [ -L /apps/polls_api/releases/20200504132027/public/assets ] as deployer@51.15.198.106
+ DEBUG [eaa07203] Command: [ -L /apps/polls_api/releases/20200504132027/public/assets ]
+ DEBUG [eaa07203] Finished in 0.243 seconds with exit status 1 (failed).
+ DEBUG [77014057] Running [ -d /apps/polls_api/releases/20200504132027/public/assets ] as deployer@51.15.198.106
+ DEBUG [77014057] Command: [ -d /apps/polls_api/releases/20200504132027/public/assets ]
+ DEBUG [77014057] Finished in 0.216 seconds with exit status 1 (failed).
+  INFO [b49b5651] Running /usr/bin/env ln -s /apps/polls_api/shared/public/assets /apps/polls_api/releases/20200504132027/public/assets as deployer@51.15.198.106
+ DEBUG [b49b5651] Command: ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env ln -s /apps/polls_api/shared/public/assets /apps/polls_api/releases/20200504132027/public/assets )
+  INFO [b49b5651] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [8e33dad0] Running if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [8e33dad0] Command: if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi
+ DEBUG [8e33dad0] Finished in 0.204 seconds with exit status 0 (successful).
+ DEBUG [9be5182a] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle check --path /apps/polls_api/shared/bundle as deployer@51.15.198.106
+ DEBUG [9be5182a] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle check --path /apps/polls_api/shared/bundle )
+ DEBUG [9be5182a] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/apps/polls_api/shared/bundle'`, and stop using this flag
+ DEBUG [9be5182a] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [9be5182a] 	The following gems are missing
+ DEBUG [9be5182a] 	 * byebug (11.1.3)
+ DEBUG [9be5182a] 	 * ffi (1.12.2)
+ DEBUG [9be5182a] 	 * rb-fsevent (0.10.4)
+ DEBUG [9be5182a] 	 * rb-inotify (0.10.1)
+ DEBUG [9be5182a] 	 * ruby_dep (1.5.0)
+ DEBUG [9be5182a] 	 * listen (3.1.5)
+ DEBUG [9be5182a] 	 * spring (2.1.0)
+ DEBUG [9be5182a] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [9be5182a] 	Install missing gems with `bundle install`
+ DEBUG [9be5182a] Finished in 1.064 seconds with exit status 1 (failed).
+  INFO [85ab97b8] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle install --path /apps/polls_api/shared/bundle --jobs 4 --without development test --deployment --quiet as deployer@51.15.198.106
+ DEBUG [85ab97b8] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle install --path /apps/polls_api/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [85ab97b8] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [85ab97b8] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/apps/polls_api/shared/bundle'`, and stop using this flag
+ DEBUG [85ab97b8] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [85ab97b8] Finished in 1.044 seconds with exit status 0 (successful).
+ DEBUG [d6259ea8] Running if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [d6259ea8] Command: if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi
+ DEBUG [d6259ea8] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [421fa212] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile as deployer@51.15.198.106
+ DEBUG [421fa212] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [421fa212] 	rake aborted!
+ DEBUG [421fa212] 	Don't know how to build task 'assets:precompile' (See the list of available tasks with `rake --tasks`)
+ DEBUG [421fa212] 	/apps/polls_api/shared/bundle/ruby/2.6.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+/usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `load'
+/usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `<main>'
+ DEBUG [421fa212] 	(See full trace by running task with --trace)
+ DEBUG [4b34c144] Running [ -d /apps/polls_api/releases/20200504132027 ] as deployer@51.15.198.106
+ DEBUG [4b34c144] Command: [ -d /apps/polls_api/releases/20200504132027 ]
+ DEBUG [4b34c144] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [36639f59] Running if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [36639f59] Command: if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi
+ DEBUG [36639f59] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [427ffa2d] Running /usr/bin/env [ -f /apps/polls_api/current/tmp/pids/sidekiq-0.pid ] as deployer@51.15.198.106
+ DEBUG [427ffa2d] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env [ -f /apps/polls_api/current/tmp/pids/sidekiq-0.pid ] )
+ DEBUG [427ffa2d] Finished in 0.246 seconds with exit status 1 (failed).
+ DEBUG [fa20b3d2] Running if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi as deployer@51.15.198.106
+ DEBUG [fa20b3d2] Command: if test ! -d /apps/polls_api/releases/20200504132027; then echo "Directory does not exist '/apps/polls_api/releases/20200504132027'" 1>&2; false; fi
+ DEBUG [fa20b3d2] Finished in 0.204 seconds with exit status 0 (successful).
+ DEBUG [03fd12ec] Running /usr/bin/env [ -f /apps/polls_api/current/tmp/pids/sidekiq-0.pid ] as deployer@51.15.198.106
+ DEBUG [03fd12ec] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; /usr/bin/env [ -f /apps/polls_api/current/tmp/pids/sidekiq-0.pid ] )
+ DEBUG [03fd12ec] Finished in 0.243 seconds with exit status 1 (failed).
+  INFO [8011ec26] Running RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle exec sidekiq --index 0 --pidfile /apps/polls_api/current/tmp/pids/sidekiq-0.pid --environment production --logfile /apps/polls_api/shared/log/sidekiq.log --config /apps/polls_api/current/config/sidekiq.yml --daemon as deployer@51.15.198.106
+ DEBUG [8011ec26] Command: cd /apps/polls_api/releases/20200504132027 && ( export RBENV_ROOT="/usr/local/rbenv" RBENV_VERSION="2.6.5" ; RBENV_ROOT=/usr/local/rbenv RBENV_VERSION=2.6.5 /usr/local/rbenv/bin/rbenv exec bundle exec sidekiq --index 0 --pidfile /apps/polls_api/current/tmp/pids/sidekiq-0.pid --environment production --logfile /apps/polls_api/shared/log/sidekiq.log --config /apps/polls_api/current/config/sidekiq.yml --daemon )
+ DEBUG [8011ec26] 	WARNING: PID file creation will be removed in Sidekiq 6.0, see #4045. Please use a proper process supervisor to start and manage your services
+ DEBUG [8011ec26] 	WARNING: Logfile redirection will be removed in Sidekiq 6.0, see #4045. Sidekiq will only log to STDOUT
+ DEBUG [8011ec26] 	WARNING: Daemonization mode will be removed in Sidekiq 6.0, see #4045. Please use a proper process supervisor to start and manage your services
+ DEBUG [8011ec26] 	No such file /apps/polls_api/current/config/sidekiq.yml
+ DEBUG [8011ec26] 	/apps/polls_api/shared/bundle/ruby/2.6.0/gems/sidekiq-5.2.7/lib/sidekiq/cli.rb:239:in `setup_options'
+/apps/polls_api/shared/bundle/ruby/2.6.0/gems/sidekiq-5.2.7/lib/sidekiq/cli.rb:31:in `parse'
+/apps/polls_api/shared/bundle/ruby/2.6.0/gems/sidekiq-5.2.7/bin/sidekiq:11:in `<top (required)>'
+/apps/polls_api/shared/bundle/ruby/2.6.0/bin/sidekiq:23:in `load'
+/apps/polls_api/shared/bundle/ruby/2.6.0/bin/sidekiq:23:in `<top (required)>'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli/exec.rb:63:in `load'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli/exec.rb:63:in `kernel_load'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli/exec.rb:28:in `run'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli.rb:476:in `exec'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/vendor/thor/lib/thor.rb:399:in `dispatch'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli.rb:30:in `dispatch'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/vendor/thor/lib/thor/base.rb:476:in `start'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/cli.rb:24:in `start'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/exe/bundle:46:in `block in <top (required)>'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/lib/bundler/friendly_errors.rb:123:in `with_friendly_errors'
+/usr/local/rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.1.2/exe/bundle:34:in `<top (required)>'
+/usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `load'
+/usr/local/rbenv/versions/2.6.5/bin/bundle:23:in `<main>'

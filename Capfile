@@ -20,10 +20,12 @@ install_plugin Capistrano::Puma
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
+load 'deploy/assets'
+
 require 'capistrano/sidekiq'
 require "capistrano/rbenv"
 require 'capistrano/bundler'
-# require 'capistrano/rails/assets' # for asset handling add
+require 'capistrano/rails/assets' # for asset handling add
 require 'capistrano/rails/migrations' # for running migrations
 
 
