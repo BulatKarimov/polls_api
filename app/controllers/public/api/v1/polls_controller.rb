@@ -5,6 +5,7 @@ class Public::Api::V1::PollsController < Public::Api::V1::ApplicationController
   expose :planned_polls, -> { Poll.where(poll_type: 'planned') }
 
   expose :poll, -> { Poll.find_by(uuid: params[:poll_uuid]) }
+  expose :polls, -> { Poll.all }
 
   def index
     return render json: archived_polls, each_serializer: PollSerializer, status: :ok if type == 'archived'
@@ -14,6 +15,8 @@ class Public::Api::V1::PollsController < Public::Api::V1::ApplicationController
   end
 
   def show
+    return render_error(error: 'Poll not found', status: :not_found) if poll.nil?
+
     render json: poll, serializer: PollSerializer, status: :ok
   end
 
