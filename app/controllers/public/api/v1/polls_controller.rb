@@ -15,7 +15,7 @@ class Public::Api::V1::PollsController < Public::Api::V1::ApplicationController
   end
 
   def show
-    return render_error(error: 'Poll not found', status: :not_found) if poll.nil?
+    return render json: { error: 'Poll not found' }, status: :not_found if poll.nil?
 
     render json: poll, serializer: PollSerializer, status: :ok
   end
